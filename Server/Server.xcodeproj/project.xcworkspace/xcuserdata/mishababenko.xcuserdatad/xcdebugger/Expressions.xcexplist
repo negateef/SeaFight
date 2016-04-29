@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Server::GetTurnOrder(sf::IpAddress const&amp;, unsigned short):Server.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Server::InitGame(sf::Packet&amp;, sf::IpAddress const&amp;, unsigned short):Server.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "port">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

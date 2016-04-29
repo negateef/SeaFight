@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		460974B11CD348E9006EB08A /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460974AD1CD348E9006EB08A /* sfml-network.framework */; };
+		460974B21CD348E9006EB08A /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460974AE1CD348E9006EB08A /* sfml-system.framework */; };
+		460974B31CD348E9006EB08A /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460974AF1CD348E9006EB08A /* sfml-window.framework */; };
+		460974B41CD34989006EB08A /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460974AC1CD348E9006EB08A /* sfml-graphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		464D96D31CD22FC500787370 /* Server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 464D96D21CD22FC500787370 /* Server.cpp */; };
+		46CC32071CD10A4400F5D99F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46CC32021CD10A4400F5D99F /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46CC31F41CD109D400F5D99F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		460974AC1CD348E9006EB08A /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../SFML/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
+		460974AD1CD348E9006EB08A /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "../SFML/Frameworks/sfml-network.framework"; sourceTree = "<group>"; };
+		460974AE1CD348E9006EB08A /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "../SFML/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
+		460974AF1CD348E9006EB08A /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "../SFML/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
+		464D96D11CD22CCC00787370 /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../../Server/Server/Server.h; sourceTree = "<group>"; };
+		464D96D21CD22FC500787370 /* Server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Server.cpp; path = ../../Server/Server/Server.cpp; sourceTree = "<group>"; };
+		46CC31F61CD109D400F5D99F /* Client */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Client; sourceTree = BUILT_PRODUCTS_DIR; };
+		46CC32001CD10A4400F5D99F /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
+		46CC32011CD10A4400F5D99F /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		46CC32021CD10A4400F5D99F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		46CC32031CD10A4400F5D99F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		46CC32041CD10A4400F5D99F /* ServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
+		46CC32051CD10A4400F5D99F /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
+		46CC32061CD10A4400F5D99F /* Visualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visualizer.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46CC31F31CD109D400F5D99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460974B41CD34989006EB08A /* sfml-graphics.framework in Frameworks */,
+				460974B11CD348E9006EB08A /* sfml-network.framework in Frameworks */,
+				460974B21CD348E9006EB08A /* sfml-system.framework in Frameworks */,
+				460974B31CD348E9006EB08A /* sfml-window.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46CC31ED1CD109D400F5D99F = {
+			isa = PBXGroup;
+			children = (
+				46CC31F81CD109D400F5D99F /* Client */,
+				46CC320E1CD10A8000F5D99F /* Frameworks */,
+				46CC31F71CD109D400F5D99F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46CC31F71CD109D400F5D99F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46CC31F61CD109D400F5D99F /* Client */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46CC31F81CD109D400F5D99F /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				46CC32021CD10A4400F5D99F /* main.cpp */,
+				46CC32001CD10A4400F5D99F /* Field.h */,
+				46CC32011CD10A4400F5D99F /* GameManager.h */,
+				46CC32031CD10A4400F5D99F /* Player.h */,
+				46CC32041CD10A4400F5D99F /* ServerAPI.h */,
+				464D96D11CD22CCC00787370 /* Server.h */,
+				464D96D21CD22FC500787370 /* Server.cpp */,
+				46CC32051CD10A4400F5D99F /* Ship.h */,
+				46CC32061CD10A4400F5D99F /* Visualizer.h */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		46CC320E1CD10A8000F5D99F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				460974AC1CD348E9006EB08A /* sfml-graphics.framework */,
+				460974AD1CD348E9006EB08A /* sfml-network.framework */,
+				460974AE1CD348E9006EB08A /* sfml-system.framework */,
+				460974AF1CD348E9006EB08A /* sfml-window.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46CC31F51CD109D400F5D99F /* Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46CC31FD1CD109D400F5D99F /* Build configuration list for PBXNativeTarget "Client" */;
+			buildPhases = (
+				46CC31F21CD109D400F5D99F /* Sources */,
+				46CC31F31CD109D400F5D99F /* Frameworks */,
+				46CC31F41CD109D400F5D99F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Client;
+			productName = Client;
+			productReference = 46CC31F61CD109D400F5D99F /* Client */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46CC31EE1CD109D400F5D99F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Misha Babenko";
+				TargetAttributes = {
+					46CC31F51CD109D400F5D99F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 46CC31F11CD109D400F5D99F /* Build configuration list for PBXProject "Client" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 46CC31ED1CD109D400F5D99F;
+			productRefGroup = 46CC31F71CD109D400F5D99F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46CC31F51CD109D400F5D99F /* Client */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46CC31F21CD109D400F5D99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464D96D31CD22FC500787370 /* Server.cpp in Sources */,
+				46CC32071CD10A4400F5D99F /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		46CC31FB1CD109D400F5D99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		46CC31FC1CD109D400F5D99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		46CC31FE1CD109D400F5D99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/SFML/Frameworks/**";
+				HEADER_SEARCH_PATHS = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/SFML/include/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46CC31FF1CD109D400F5D99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/SFML/Frameworks/**";
+				HEADER_SEARCH_PATHS = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/SFML/include/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46CC31F11CD109D400F5D99F /* Build configuration list for PBXProject "Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46CC31FB1CD109D400F5D99F /* Debug */,
+				46CC31FC1CD109D400F5D99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46CC31FD1CD109D400F5D99F /* Build configuration list for PBXNativeTarget "Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46CC31FE1CD109D400F5D99F /* Debug */,
+				46CC31FF1CD109D400F5D99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46CC31EE1CD109D400F5D99F /* Project object */;
+}
