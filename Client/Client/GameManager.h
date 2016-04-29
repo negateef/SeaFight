@@ -146,6 +146,8 @@ public:
                         ServerMoveStatus::Code code = player_.EnemyMadeShot(position);
                         if (code == ServerMoveStatus::Code::kMiss) {
                             game_status = GameStatus::kMyTurn;
+                        } else {
+                            game_status = GameStatus::kEnemyTurn;
                         }
                     });
                 });
