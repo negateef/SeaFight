@@ -7,10 +7,17 @@
 //
 
 #include <iostream>
+#include <string>
+
 #include "Watcher.h"
 
 
 int main(int argc, const char * argv[]) {
+    if (argc > 1) {
+        ServerAPI::GetInstance().Init(std::string(argv[0]));
+    } else {
+        ServerAPI::GetInstance().Init();
+    }
     Watcher::GetInstance().Init();
     Watcher::GetInstance().Play();
     return 0;

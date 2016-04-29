@@ -25,7 +25,7 @@
 class ServerAPI {
 private:
     sf::UdpSocket socket_;
-    sf::IpAddress kServerAddress = "127.0.0.1";
+    sf::IpAddress server_address_;
     
     ServerAPI() {}
     
@@ -38,7 +38,8 @@ public:
     ServerAPI &operator =(const ServerAPI &) = delete;
     ServerAPI(const Server &) = delete;
     
-    void Init() {
+    void Init(const std::string server_ip = "127.0.0.1") {
+        server_address_ = server_ip;
         if (socket_.bind(Server::kClientPort) != sf::Socket::Done) {
             std::cerr << "Failed to bind to port " << Server::kClientPort << std::endl;
             return;
@@ -52,7 +53,7 @@ public:
         packet << Server::kGetFieldsRequest;
         sf::Packet receive_packet;
         unsigned short port;
-        socket_.send(packet, kServerAddress, Server::kServerPort);
+        socket_.send(packet, server_address_, Server::kServerPort);
         socket_.receive(receive_packet, ip, port);
         Field field1, field2;
         receive_packet >> field1 >> field2;

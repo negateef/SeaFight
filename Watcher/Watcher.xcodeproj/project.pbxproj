@@ -34,13 +34,13 @@
 		460974931CD34738006EB08A /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = ../../Server/Server/Server.h; sourceTree = "<group>"; };
 		460974951CD34759006EB08A /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Field.h; path = ../../Client/Client/Field.h; sourceTree = "<group>"; };
 		460974961CD34759006EB08A /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ship.h; path = ../../Client/Client/Ship.h; sourceTree = "<group>"; };
+		46104E0E1CD3A0A10055F3F2 /* ServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
 		46E9E5BA1CD34B84001E375F /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "../SFML/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
 		46E9E5BB1CD34B84001E375F /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "../SFML/Frameworks/sfml-network.framework"; sourceTree = "<group>"; };
 		46E9E5BC1CD34B84001E375F /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "../SFML/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
 		46E9E5BD1CD34B84001E375F /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "../SFML/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
 		46E9E5C31CD34BB3001E375F /* Watcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watcher.h; sourceTree = "<group>"; };
 		46E9E5C41CD34BE8001E375F /* Visualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Visualizer.h; path = ../../Client/Client/Visualizer.h; sourceTree = "<group>"; };
-		46E9E5C51CD34C04001E375F /* ServerAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +82,10 @@
 				460974951CD34759006EB08A /* Field.h */,
 				460974961CD34759006EB08A /* Ship.h */,
 				460974921CD34738006EB08A /* Server.cpp */,
+				46104E0E1CD3A0A10055F3F2 /* ServerAPI.h */,
 				460974931CD34738006EB08A /* Server.h */,
 				46E9E5C31CD34BB3001E375F /* Watcher.h */,
 				46E9E5C41CD34BE8001E375F /* Visualizer.h */,
-				46E9E5C51CD34C04001E375F /* ServerAPI.h */,
 			);
 			path = Watcher;
 			sourceTree = "<group>";

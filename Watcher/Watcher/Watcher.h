@@ -46,14 +46,11 @@ public:
     
     
     void Play() {    
-        ServerAPI::GetInstance().Init();
-        
         std::mutex mutex;
         
         while (true) {
             
             std::unique_lock<std::mutex> lock(mutex);
-            
             visualizer_.DrawFields(first_field_, second_field_);
             lock.unlock();
             

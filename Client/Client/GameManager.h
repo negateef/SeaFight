@@ -28,6 +28,8 @@ private:
     Player player_;
     Field my_field_;
     Field enemy_field_;
+    
+    const std::string kFieldPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/field.txt";
 
     GameManager() : player_(my_field_, enemy_field_) {}
 
@@ -40,6 +42,7 @@ private:
     };
 
     void GenerateField() {
+        
         Ship ship4(4, Position(0, 0), true);
         my_field_.AddShip(ship4);
 

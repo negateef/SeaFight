@@ -23,7 +23,7 @@ private:
     Field enemy_field_;
     std::string status_;
     
-    const std::string kFontPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/Timeless.ttf";
+    const std::string kFontPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Timeless.ttf";
 
     void DrawField(const int height, const int width, double position_x, double position_y, const Field &field) {
         sf::RectangleShape rectangle(sf::Vector2f(height, width));

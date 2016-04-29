@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B1992C7F3D1C6E0F74CA06EF4CFF9B6967A39624",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9ED7F8D9E80A6C09E689F8069F72305C61D7699F" : 0,
+    "B1992C7F3D1C6E0F74CA06EF4CFF9B6967A39624" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DB90FC68-B523-4A27-8152-879EE64431DF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9ED7F8D9E80A6C09E689F8069F72305C61D7699F" : "..\/..\/..",
+    "B1992C7F3D1C6E0F74CA06EF4CFF9B6967A39624" : "SeaFightXCode\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Watcher",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Watcher\/Watcher.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/mihailbabenko\/scrollingphotos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9ED7F8D9E80A6C09E689F8069F72305C61D7699F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/negateef\/SeaFight.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B1992C7F3D1C6E0F74CA06EF4CFF9B6967A39624"
+    }
+  ]
+}
