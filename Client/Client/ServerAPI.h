@@ -9,22 +9,22 @@
 #ifndef ServerAPI_h
 #define ServerAPI_h
 
-#include "Ship.h"
-#include "Field.h"
-#include <cstdlib>
-#include <thread>
-#include <chrono>
-#include <string>
-#include <iostream>
-
 #include <SFML/Network.hpp>
 
+#include <cstdlib>
+#include <string>
+#include <iostream>
+#include <chrono>
+#include <thread>
+
+#include "Ship.h"
+#include "Field.h"
 #include "Server.h"
 
 class ServerAPI {
 private:
     sf::UdpSocket socket_;
-    sf::IpAddress kServerAddress = "127.0.0.1";
+    sf::IpAddress server_address_;
     
     
     ServerAPI() {}
@@ -38,7 +38,8 @@ public:
     ServerAPI &operator =(const ServerAPI &) = delete;
     ServerAPI(const Server &) = delete;
     
-    void Init() {
+    void Init(const std::string server_ip = "127.0.0.1") {
+        server_address_ = server_ip;
         if (socket_.bind(Server::kClientPort) != sf::Socket::Done) {
             std::cerr << "Failed to bind to port " << Server::kClientPort << std::endl;
             return;
@@ -53,9 +54,8 @@ public:
         packet << position.row << position.col;
         sf::Packet receive_packet;
         unsigned short port;
-        socket_.send(packet, kServerAddress, Server::kServerPort);
+        socket_.send(packet, server_address_, Server::kServerPort);
         socket_.receive(receive_packet, ip, port);
-        
         ServerMoveStatus status(ServerMoveStatus::Code::kError, {-1, -1});
         receive_packet >> status.position.row >> status.position.col;
         int raw_code;
@@ -73,7 +73,7 @@ public:
         int row, col;
         unsigned short port;
         while (true) {
-            socket_.send(packet, kServerAddress, Server::kServerPort);
+            socket_.send(packet, server_address_, Server::kServerPort);
             socket_.receive(receive_packet, ip, port);
             std::string status;
             receive_packet >> status;
@@ -100,7 +100,7 @@ public:
         packet << field;
         sf::Packet receive_packet;
         unsigned short port;
-        socket_.send(packet, kServerAddress, Server::kServerPort);
+        socket_.send(packet, server_address_, Server::kServerPort);
         socket_.receive(receive_packet, ip, port);
         std::string status;
         receive_packet >> status;
@@ -124,7 +124,7 @@ public:
         packet << Server::kGetTurnOrder;
         sf::Packet receive_packet;
         unsigned short port;
-        socket_.send(packet, kServerAddress, Server::kServerPort);
+        socket_.send(packet, server_address_, Server::kServerPort);
         socket_.receive(receive_packet, ip, port);
         Server::SendGameStatus game_status;
         receive_packet >> game_status;

@@ -77,11 +77,11 @@ public:
     void Init();
 };
 
-sf::Packet& operator << (sf::Packet &packet, const Field &field);
-sf::Packet& operator >> (sf::Packet &packet, Field &field);
+sf::Packet &operator << (sf::Packet &packet, const Field &field);
+sf::Packet &operator >> (sf::Packet &packet, Field &field);
 
-sf::Packet& operator << (sf::Packet &packet, const Server::SendGameStatus &status);
-sf::Packet& operator >> (sf::Packet &packet, Server::SendGameStatus &status);
+sf::Packet &operator << (sf::Packet &packet, const Server::SendGameStatus &status);
+sf::Packet &operator >> (sf::Packet &packet, Server::SendGameStatus &status);
 
 
 #endif /* Server_h */

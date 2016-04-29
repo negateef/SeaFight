@@ -22,6 +22,8 @@ private:
     Field my_field_;
     Field enemy_field_;
     std::string status_;
+    
+    const std::string kFontPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/Timeless.ttf";
 
     void DrawField(const int height, const int width, double position_x, double position_y, const Field &field) {
         sf::RectangleShape rectangle(sf::Vector2f(height, width));
@@ -48,7 +50,7 @@ private:
 
         for (int i = 0; i < Field::kSize; ++i) {
             sf::Font font;
-            if (!font.loadFromFile("/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/Timeless.ttf")) {
+            if (!font.loadFromFile(kFontPath)) {
                 std::cerr << "Couldn't load font file" << std::endl;
                 exit(0);
             }
@@ -156,7 +158,7 @@ private:
 
     void DrawStatus() { 
         sf::Font font;
-        if (!font.loadFromFile("/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/Timeless.ttf")) {
+        if (!font.loadFromFile(kFontPath)) {
             std::cerr << "Couldn't load font file" << std::endl;
             exit(0);
         }

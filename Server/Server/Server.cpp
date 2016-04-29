@@ -17,7 +17,7 @@
 #include <chrono>
 #include <thread>
 
-sf::Packet& operator << (sf::Packet &packet, const Field &field) {
+sf::Packet &operator << (sf::Packet &packet, const Field &field) {
     for (int i = 0; i < Field::kSize; ++i)
         for (int j = 0; j < Field::kSize; ++j) {
             packet << static_cast<int>(field.GetCellType(i, j));
@@ -32,7 +32,7 @@ sf::Packet& operator << (sf::Packet &packet, const Field &field) {
     return packet;
 }
 
-sf::Packet& operator >> (sf::Packet &packet, Field &field) {
+sf::Packet &operator >> (sf::Packet &packet, Field &field) {
     for (int i = 0; i < Field::kSize; ++i)
         for (int j = 0; j < Field::kSize; ++j) {
             int type;
@@ -50,12 +50,12 @@ sf::Packet& operator >> (sf::Packet &packet, Field &field) {
     return packet;
 }
 
-sf::Packet& operator << (sf::Packet &packet, const Server::SendGameStatus &status) {
+sf::Packet &operator << (sf::Packet &packet, const Server::SendGameStatus &status) {
     packet << static_cast<int>(status);
     return packet;
 }
 
-sf::Packet& operator >> (sf::Packet &packet, Server::SendGameStatus &status) {
+sf::Packet &operator >> (sf::Packet &packet, Server::SendGameStatus &status) {
     int status_int;
     packet >> status_int;
     status = static_cast<Server::SendGameStatus>(status_int);

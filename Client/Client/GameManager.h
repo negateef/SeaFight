@@ -63,9 +63,7 @@ public:
 
     
     
-    void Play() {    
-        ServerAPI::GetInstance().Init();
-        
+    void Play() {            
         GenerateField();
 
         ServerAPI::GetInstance().StartGame(my_field_, [] (ServerAPI::StartGameStatus status) {
