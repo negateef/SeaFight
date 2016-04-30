@@ -99,14 +99,17 @@ void Server::GetTurnOrder(const sf::IpAddress &sender, unsigned short port) {
 }
 
 void Server::GetMove(const sf::IpAddress &sender, unsigned short port) {
-    if (player_ip_move_.empty() || (!player_ip_move_.empty() && sender == player_ip_move_.back())) {
+    if (player_ip_move_.empty() || (!player_ip_move_.empty() && sender == player_ip_move_.back()) || 
+        moves_.empty()) {
+        
         sf::Packet reject_packet;
         reject_packet << kFailedResponse;
         socket_.send(reject_packet, sender, port);
     } else {
         sf::Packet result_packet;
         result_packet << kSuccessResponse;
-        result_packet << moves_.back().row << moves_.back().col;
+        result_packet << moves_[0].row << moves_[0].col;
+        moves_.erase(moves_.begin());
         socket_.send(result_packet, sender, port);
     }
 }

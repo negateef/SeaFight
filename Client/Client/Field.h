@@ -78,7 +78,7 @@ public:
                     return ServerMoveStatus::Code::kKill;
                 } else {
                     field_[position.row][position.col] = CellType::kHurt;
-                    return ServerMoveStatus::Code::kKill;
+                    return ServerMoveStatus::Code::kHurt;
                 }
                 
             }

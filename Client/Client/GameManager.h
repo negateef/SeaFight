@@ -142,7 +142,6 @@ public:
             }
             if (game_status == GameStatus::kEnemyTurn) {
                 game_status = GameStatus::kWaitingServerResponse;
-    
                 std::thread get_move_thread([this, &game_status, &mutex] () {
                     ServerAPI::GetInstance().GetEnemyMove([this, &game_status, &mutex] (Position position) {
                         std::lock_guard<std::mutex> lock(mutex);
