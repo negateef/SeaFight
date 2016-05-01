@@ -104,6 +104,51 @@ public:
     void SetCellType(int row, int col, CellType new_type) {
         field_[row][col] = new_type;
     }
+    
+    void AddShipFromKilled(Position position) {
+        int d_row = -1, d_col = -1;
+        if (position.row < kSize && field_[position.row + 1][position.col] == CellType::kHurt) {
+            d_row = 1;
+            d_col = 0;
+        }
+        if (position.row > 0 && field_[position.row - 1][position.col] == CellType::kHurt) {
+            d_row = -1;
+            d_col = 0;
+        }
+        if (position.col < kSize && field_[position.row][position.col + 1] == CellType::kHurt) {
+            d_row = 0;
+            d_col = 1;
+        }
+        if (position.col > 0 && field_[position.row][position.col - 1] == CellType::kHurt) {
+            d_row = 0;
+            d_col = -1;
+        }
+        
+        if (d_row == -1 && d_col == -1) {
+            AddShip(Ship(1, position, true));
+            return;
+        }
+        
+        while (position.row + d_row > 0 && position.row + d_row < kSize &&
+               position.col + d_col > 0 && position.col + d_col < kSize &&
+               (field_[position.row + d_row][position.col + d_col] == CellType::kHurt ||
+                field_[position.row + d_row][position.col + d_col] == CellType::kKilled)) {
+                   position.row += d_row;
+                   position.col += d_col;
+               }
+        
+        Position start = position;
+        int length = 1;
+        while (position.row - d_row > 0 && position.row - d_row < kSize &&
+               position.col - d_col > 0 && position.col - d_col < kSize &&
+               (field_[position.row - d_row][position.col - d_col] == CellType::kHurt ||
+                field_[position.row - d_row][position.col - d_col] == CellType::kKilled)) {
+                   position.row -= d_row;
+                   position.col -= d_col;
+                   ++length;
+               }
+        AddShip(Ship(length, start, (d_row == 0) ? false : true));
+    }
 };
 
 

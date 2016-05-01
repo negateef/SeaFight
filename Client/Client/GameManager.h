@@ -29,6 +29,9 @@ private:
     Field my_field_;
     Field enemy_field_;
     
+    std::atomic<int> killed_ships_;
+    std::atomic<int> lost_ships_;
+    
     const std::string kFieldPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/field.txt";
 
     GameManager() : player_(my_field_, enemy_field_) {}
@@ -38,7 +41,8 @@ private:
         kEnemyTurn,
         kWaitingServerResponse,
         kInitializingGame,
-        kWaitingOtherPlayer
+        kWaitingOtherPlayer,
+        kFinished
     };
 
     void ReadField() {
@@ -109,6 +113,18 @@ public:
             visualizer_.DrawFields(my_field_, enemy_field_);
             lock.unlock();
 
+            if (killed_ships_ == 10 || lost_ships_ == 10) {
+                game_status = GameStatus::kFinished;
+                if (killed_ships_ == 10) {
+                    display_status = "You Won!";
+                } else {
+                    display_status = "You Lost!";
+                }
+            }
+            
+            if (game_status == GameStatus::kFinished) {
+                continue;
+            }
            
             if (game_status == GameStatus::kWaitingServerResponse || 
                 game_status == GameStatus::kWaitingOtherPlayer) {
@@ -139,6 +155,11 @@ public:
                         player_.GotMoveStatus(status);
                         if ((status.code == ServerMoveStatus::Code::kHurt) || 
                             (status.code == ServerMoveStatus::Code::kKill)) {
+                            
+                            if (status.code == ServerMoveStatus::Code::kKill) {
+                                enemy_field_.AddShipFromKilled(status.position);
+                            }
+                            
                             game_status = GameStatus::kMyTurn;
                         } else {
                             game_status = GameStatus::kEnemyTurn;

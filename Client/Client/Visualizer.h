@@ -182,6 +182,7 @@ private:
         while (window_.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 window_.close();
+                exit(0);
             }
         }
         window_.clear();
