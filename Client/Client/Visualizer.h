@@ -57,15 +57,18 @@ private:
             sf::Text letter;
             letter.setString(sf::String(static_cast<char>(static_cast<int>('a') + i)));
             letter.setFont(font);
-            letter.setPosition(position_x - 40, position_y + cell_height * i);
+            letter.setPosition(position_x - 40, position_y + cell_height * (i - 0.2));
             letter.setColor(sf::Color::White);
             letter.setCharacterSize(50);
             window_.draw(letter);
 
             sf::Text digit;
-            digit.setString(sf::String(static_cast<char>(static_cast<int>('1') + i)));
+            if (i == 9) 
+                digit.setString(sf::String("10"));
+            else 
+                digit.setString(sf::String(static_cast<char>(static_cast<int>('1') + i)));
             digit.setFont(font);
-            digit.setPosition(position_x + cell_width * (i + 0.3), position_y + height);
+            digit.setPosition(position_x + cell_width * (i + 0.2), position_y + height);
             digit.setColor(sf::Color::White);
             digit.setCharacterSize(50);
             window_.draw(digit);
@@ -89,7 +92,7 @@ private:
             ship_rect.setPosition(sf::Vector2f(left_x, left_y));
             ship_rect.setFillColor(sf::Color::Black);
             ship_rect.setOutlineThickness(5.0);
-            ship_rect.setOutlineColor(sf::Color::White);
+            ship_rect.setOutlineColor(sf::Color::Red);
 
             window_.draw(ship_rect);
            

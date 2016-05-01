@@ -31,7 +31,7 @@ struct ServerMoveStatus {
 
 class Field {
 public:
-    static const int kSize = 8;
+    static const int kSize = 10;
     enum class CellType {
         kEmpty,
         kShot,
@@ -52,6 +52,9 @@ public:
     
     void ShootStatus(ServerMoveStatus status) {
         Position position = status.position;
+        if (status.code == ServerMoveStatus::Code::kMiss && field_[position.row][position.col] != CellType::kEmpty) {
+            return;
+        }
         switch (status.code) {
             case ServerMoveStatus::Code::kError: return;
             case ServerMoveStatus::Code::kMiss: field_[position.row][position.col] = CellType::kShot; break;

@@ -28,7 +28,7 @@ private:
     std::vector<sf::IpAddress> players_ips_;
     std::vector<Position> moves_;
     std::vector<sf::IpAddress> player_ip_move_;
-    
+    int players_get_turn_;
     
     GameStatus game_status_;
     sf::UdpSocket socket_;

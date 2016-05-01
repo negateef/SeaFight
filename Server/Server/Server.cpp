@@ -85,9 +85,8 @@ void Server::InitGame(sf::Packet &packet, const sf::IpAddress &sender, unsigned 
 }
 
 void Server::GetTurnOrder(const sf::IpAddress &sender, unsigned short port) {
-    static int players_cnt = 0;
-    ++players_cnt;
-    if (players_cnt == 2) {
+    ++players_get_turn_;
+    if (players_get_turn_ == 2) {
         sf::Packet your_turn;
         your_turn << Server::SendGameStatus::YourTurn;
         sf::Packet enemy_turn;
@@ -159,6 +158,12 @@ void Server::Init() {
         return;
     }
     game_status_ = GameStatus::FinishedOrNotStarted;
+    fields_.clear();
+    players_ips_.clear();
+    moves_.clear();
+    player_ip_move_.clear();
+    players_get_turn_ = 0;
+
     while (true) {
         sf::Packet packet; 
         sf::IpAddress sender;

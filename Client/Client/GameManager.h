@@ -19,8 +19,8 @@
 #include <chrono>
 #include <atomic>
 #include <string>
-
 #include <iostream>
+#include <fstream>
 
 class GameManager {
 private:
@@ -41,13 +41,21 @@ private:
         kWaitingOtherPlayer
     };
 
-    void GenerateField() {
+    void ReadField() {
         
-        Ship ship4(4, Position(0, 0), true);
-        my_field_.AddShip(ship4);
-
-        Ship ship2(2, Position(5, 5), false);
-        my_field_.AddShip(ship2);
+        std::ifstream field_file(kFieldPath); 
+        
+        for (int i = 0; i < 10; ++i) {
+            int row, col, length;
+            std::string orientation;
+            
+            field_file >> row >> col >> length >> orientation;
+            
+            Ship ship(length, Position(row - 1, col - 1), orientation == "horizontal" ? true : false);
+            my_field_.AddShip(ship);
+        }
+        
+        field_file.close();
     }
     
     
@@ -67,7 +75,7 @@ public:
     
     
     void Play() {            
-        GenerateField();
+        ReadField();
 
         ServerAPI::GetInstance().StartGame(my_field_, [] (ServerAPI::StartGameStatus status) {
             if (status == ServerAPI::StartGameStatus::kFailed) {
