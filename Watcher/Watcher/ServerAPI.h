@@ -40,8 +40,8 @@ public:
     
     void Init(const std::string server_ip = "127.0.0.1") {
         server_address_ = server_ip;
-        if (socket_.bind(Server::kClientPort) != sf::Socket::Done) {
-            std::cerr << "Failed to bind to port " << Server::kClientPort << std::endl;
+        if (socket_.bind(Server::kWatcherPort) != sf::Socket::Done) {
+            std::cerr << "Failed to bind to port " << Server::kWatcherPort << std::endl;
             return;
         }
     }

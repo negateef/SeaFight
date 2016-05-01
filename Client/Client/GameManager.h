@@ -32,7 +32,7 @@ private:
     std::atomic<int> killed_ships_;
     std::atomic<int> lost_ships_;
     
-    const std::string kFieldPath = "/Users/mishababenko/Projects/SHAD/Semester2/C++/SeaFightXCode/Client/Client/field.txt";
+    const std::string kFieldPath = "field.txt";
 
     GameManager() : player_(my_field_, enemy_field_) {}
 
@@ -108,11 +108,7 @@ public:
             if (game_status == GameStatus::kWaitingServerResponse) {
                 display_status = "Waiting response";
             }
-
-            visualizer_.SetStatus(display_status);
-            visualizer_.DrawFields(my_field_, enemy_field_);
-            lock.unlock();
-
+            
             if (killed_ships_ == 10 || lost_ships_ == 10) {
                 game_status = GameStatus::kFinished;
                 if (killed_ships_ == 10) {
@@ -121,6 +117,12 @@ public:
                     display_status = "You Lost!";
                 }
             }
+
+            visualizer_.SetStatus(display_status);
+            visualizer_.DrawFields(my_field_, enemy_field_);
+            lock.unlock();
+
+            
             
             if (game_status == GameStatus::kFinished) {
                 continue;
@@ -157,6 +159,7 @@ public:
                             (status.code == ServerMoveStatus::Code::kKill)) {
                             
                             if (status.code == ServerMoveStatus::Code::kKill) {
+                                ++killed_ships_;
                                 enemy_field_.AddShipFromKilled(status.position);
                             }
                             
@@ -178,6 +181,9 @@ public:
                         if (code == ServerMoveStatus::Code::kMiss) {
                             game_status = GameStatus::kMyTurn;
                         } else {
+                            if (code == ServerMoveStatus::Code::kKill) {
+                                ++lost_ships_;
+                            }
                             game_status = GameStatus::kEnemyTurn;
                         }
                     });
